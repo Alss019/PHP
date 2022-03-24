@@ -7,6 +7,9 @@
     <title>Document</title>
 </head>
 <body>
+
+<!-- -----------------SYNTAXE---------------- -->
+
     <?php
     echo "hello world";
     echo '<br>';
@@ -21,12 +24,37 @@
     $bool = false;
     echo gettype($bool);
     echo'<br>';
-    // Exo 2
+
+// -----------------VARIABLES----------------
+
+
+    // Exo 1
     $a = 12;
     $b= 10;
     $total = $a + $b;
     echo $total
-    // Exo3
+
+    // Exo2
+    $a = 5;
+    $b = 3;
+    $c = $a + $b;
+    echo '<br>';
+    echo $a,$b,$c;
+    $a = 2;
+    echo $a;
+    $c= $b-$a;
+    echo '<br>';
+    echo $a,$b,$c;
+
+    // Exo 3
+    $a = 15;
+    $b = 23;
+    echo $a,$b;
+    [$a, $b] = [$b, $a];
+    echo'<br>';
+    echo $a,$b;
+
+    // Exo 4
 ?>
 </body>
 </html>
