@@ -25,6 +25,7 @@
     echo gettype($bool);
     echo'<br>';
 
+
 // -----------------VARIABLES----------------
 
 
@@ -32,7 +33,8 @@
     $a = 12;
     $b= 10;
     $total = $a + $b;
-    echo $total
+    echo $total;
+    echo '<br>';
 
     // Exo2
     $a = 5;
@@ -40,21 +42,42 @@
     $c = $a + $b;
     echo '<br>';
     echo $a,$b,$c;
+    echo '<br>';
     $a = 2;
     echo $a;
     $c= $b-$a;
     echo '<br>';
     echo $a,$b,$c;
+    echo '<br>';
 
     // Exo 3
-    $a = 15;
-    $b = 23;
-    echo $a,$b;
-    [$a, $b] = [$b, $a];
+    // $a = 15;
+    // $b = 23;
+    // echo $a,$b;
+    // [$a, $b] = [$b, $a];
+    // echo'<br>';
+    // echo $a,$b;
+
     echo'<br>';
-    echo $a,$b;
+    $a=15;
+    $b=23;
+    $c=$a;
+    $a=$b;
+    $b=$c;
+    echo "$a<br>";
+    echo "$b<br>";
+    
+
+// -----------------VARIABLES----------------
+
 
     // Exo 4
+    function prixTTC($prixHT,$nbr,$tva){
+        $totalTTC = $prixHT * $nbr;
+        $totalTTC = ($totalTTC +($totalTTC * $tva/100));
+        return $totalTTC;
+    };
+    echo prixTTC(10,2,20);
 ?>
 </body>
 </html>
