@@ -21,10 +21,12 @@
     $bool = false;
     echo gettype($bool);
     echo'<br>';
+    // Exo 2
     $a = 12;
     $b= 10;
     $total = $a + $b;
     echo $total
+    // Exo3
 ?>
 </body>
 </html>
