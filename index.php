@@ -205,6 +205,8 @@ while ($p<$m){
     $p++;
     echo'<br>';
 }
+
+
 $tab = [];
 for($i = 0; $i<10; $i++){
     $tab[$i] = $i;
@@ -212,12 +214,52 @@ for($i = 0; $i<10; $i++){
 }
 var_dump($tab);
 echo '<br>';
+
+
 $tab1 = [];
 for($i = 0; $i<10; $i++){
     $tab1[$i] = $i;
     $tab1[$i] = random_int(10, 30);
 }
 var_dump($tab1);
+echo '<br>';
+
+
+$tab1 = [];
+for($i = 0; $i<10; $i++){
+    $tab1[$i] = $i;
+    $tab1[$i] = rand (10,30);
+}
+var_dump($tab1);
+
+echo '<br>';
+echo '<br>';
+
+$tableauBonus = array();
+for ($i=0; $i <=10 ; $i++) { 
+    $tableauBonus[$i] = random_int(10, 30);
+}
+var_dump($tableauBonus);
+
+
+$tab6 = array(10,25,6,33, 58,1,49,110,12,13);
+function getmaxArray($tab6){
+    $max = 0;
+    foreach($tab6 as $value){
+        if($value > $max){
+            $max=$value;
+        }    
+    }
+    return $max;
+}
+echo getmaxArray($tab6);
+    
+
+
+
+
+
+
 ?>
 </body>
 </html>
