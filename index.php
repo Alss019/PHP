@@ -57,6 +57,7 @@
     [$a, $b] = [$b, $a];
     echo'<br>';
     echo $a,$b;
+    echo'<br>';
 
 // Exo 4
     echo'<br>';
@@ -79,6 +80,7 @@
         return "le prix TTC est de : $totalTTC €";
     };
     echo prixTTC(10,2,20);
+    echo'<br>';
 
 // Exo 6
     function testNbr($nbr){
@@ -98,22 +100,24 @@
     testNbr(-23);
     echo '<br>';
     testNbr(0);
+    echo'<br>';
 
 // Exo 7
     function nbr($a,$b,$c){
         if($a > $b and $a > $b){
-            echo "le chiffre le plus grand est : $a";
+            return "le chiffre le plus grand est : $a";
         }
         else if($b > $a and $b > $c){
-            echo "le chiffre le plus grand est : $b";
+            return "le chiffre le plus grand est : $b";
         }
         else{
-            echo "le chiffre le plus grand est : $c";
+            return "le chiffre le plus grand est : $c";
         }
     }
-    echo '<br>';
+
     echo '<br>';
     echo nbr(10,20,34);
+    echo'<br>';
 
 // Exo 8
 function nbr1($a,$b,$c){
@@ -129,6 +133,7 @@ function nbr1($a,$b,$c){
 }
 echo "<br>" ;
 echo nbr1(10,20,34);
+echo'<br>';
 
 // Exo 9
 
@@ -148,6 +153,71 @@ function cat($age){
 }
 echo '<br>';
 echo cat(17);
+echo'<br>';
+
+
+function categorie($categorie){
+    switch($categorie){
+    case ($categorie >= 6 and $categorie <=7) :
+            echo "poussin";
+            break;
+
+    case ($categorie >= 8 and $categorie <=9) : 
+            echo " Pupille";
+            break;
+
+    case ($categorie >= 10 and  $categorie <=11) : 
+            echo "Minime";
+            break;
+
+    case ($categorie >= 12): 
+            echo "Cadet";
+            break;
+    default :
+            echo "entre pas dans les categories";
+            break;
+    }
+}
+    categorie(11);
+
+    echo'<br>';
+    $i = 1;
+    while ($i<6){
+        echo $i;
+        $i++;
+        echo'<br>';
+    }
+
+function calcul($nbr){
+for($i=0 ; $i < 11 ;$i++){
+    echo $nbr++;
+    echo'<br>';
+    }
+}
+calcul(23);
+
+$p = 23;
+$m = $p + 10;
+$i = 1;
+echo'<br>';
+while ($p<$m){
+    echo $p;
+    $p++;
+    echo'<br>';
+}
+$tab = [];
+for($i = 0; $i<10; $i++){
+    $tab[$i] = $i;
+    $tab[$i]++;
+}
+var_dump($tab);
+echo '<br>';
+$tab1 = [];
+for($i = 0; $i<10; $i++){
+    $tab1[$i] = $i;
+    $tab1[$i] = random_int(10, 30);
+}
+var_dump($tab1);
 ?>
 </body>
 </html>
