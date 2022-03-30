@@ -39,18 +39,22 @@
     </div>
   </div>
 </header>
+<div class="container">
+  <form action="" method="post">
     <h3>Liste des Utilisateurs :</h3>
-    <a type="button" class="btn btn-primary btn-block m-5" href=deleteUser.php>Supprimer</a>
-    <form action="" method="post">
+    <a type="button" class="btn btn-danger btn-block m-5" href=deleteUser.php>Supprimer Utilisateurs</a>
     
     <div class="d-flex">
-    <?php
+      <div class="row row-cols-1 row-cols-md-3 g-4 m-auto">
 
+    <?php
         include 'connectBDD.php';
         include 'Fonction.php';
         showAllUtil($bdd);
     ?>
+      </div>
     </div>
-    </form>
+    </div>
+  </form>
 </body>
 </html>

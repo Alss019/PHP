@@ -40,7 +40,7 @@
   </div>
 </header>
 <div class="container">
-    <form method="post" action="" style="margin-top: 30px;">
+<form action="index.php" method="POST" enctype="multipart/form-data"  style="margin-top: 30px;" >
 
     <div class="form-outline mb-4">
     <label class="form-label">Nom</label>
@@ -54,12 +54,17 @@
 
     <div class="form-outline mb-4">
     <label class="form-label">Email</label>
-    <input type="text" class="form-control" name="mail_util"/>
+    <input type="email" class="form-control" name="mail_util"/>
     </div>
 
     <div class="form-outline mb-4">
     <label class="form-label">Mot de Passe</label>
-    <input type="text" class="form-control" name="mdp_util"/>
+    <input type="password" class="form-control" name="mdp_util"/>
+    </div>
+
+    <div class="form-outline mb-4">
+    <label class="form-label">Photo de Profil</label>
+    <input type="file" class="form-control" name="img_util"/>
     </div>
 
         <button type="submit" class="btn btn-primary btn-block" value="Ajouter" >Ajouter</button>
@@ -72,19 +77,33 @@
         include 'Fonction.php';
 
         if(isset($_POST['nom_util'])AND isset($_POST['prenom_util']) 
-        AND isset($_POST['mail_util'])AND isset($_POST['mdp_util']) AND
-        $_POST['nom_util'] != "" AND $_POST['prenom_util'] !="" AND 
-        $_POST['mail_util'] != "" AND $_POST['mdp_util'] !=""){
-            $nomUtil = $_POST['nom_util'];
+        AND isset($_POST['mail_util'])AND isset($_POST['mdp_util']) AND isset($_FILES['img_util']) AND
+        $_POST['nom_util'] !='' AND $_POST['prenom_util'] !='' AND 
+        $_POST['mail_util'] !='' AND $_POST['mdp_util'] !='' AND $_FILES['img_util'] !=''){
+            
+          $nomUtil = $_POST['nom_util'];
             $prenomUtil = $_POST['prenom_util'];
             $mailUtil = $_POST['mail_util'];
             $mdpUtil = $_POST['mdp_util'];
-            addUtil($bdd,$nomUtil, $prenomUtil, $mailUtil, $mdpUtil);
-            echo "Votre profil a été créer";
+            $mdpUtil = md5($_POST['mdp_util']);
+            $tmpName = $_FILES['img_util']['tmp_name'];
+            $name = $_FILES['img_util']['name'];
+            $img = "./image/$name";
+            move_uploaded_file($tmpName, $img);
+            addUtil($bdd,$nomUtil, $prenomUtil, $mailUtil, $mdpUtil, $img);
+            echo '<br><div class="alert alert-success container" style="text-align:center;"> Votre profil a été créer avec succès </div>';
         }
         else{
-            echo '<p style="text-align:center">Veuillez remplir les champs du  formulaire<p>';
+            echo '<br><div class="alert alert-danger container" style="text-align:center;"> Veuillez remplir les champs du  formulaire </div>';
         }
+        
     ?>
 </body>
 </html>
+
+
+
+<!-- $nomTemp = $_FILES['img_util']['tmp_name'];
+    $nameFile = $_FILES['img_util']['name'];
+            
+            $fichier = move_uploaded_file($tmpName, "./image/$name"); -->

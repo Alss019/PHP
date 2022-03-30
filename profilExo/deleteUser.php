@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <title>Afficher Utilisateur</title>
+    <title>Supprimer Utilisateur</title>
 </head>
 <body>
 <header class="masthead">
@@ -39,15 +39,20 @@
     </div>
   </div>
 </header>
+
+
+
+
 <div class="container mt-3">
     <form action="" method="post">
+      <ul class="list-group">
     <?php
         include 'connectBDD.php';
         include 'Fonction.php';
         showUtil($bdd);
     ?>
-    </div>
-    <input type="submit" class="btn btn-primary btn-block m-5" value="Supprimer">
+    </ul>
+    <input type="submit" class="btn btn-danger btn-block m-5" value="Supprimer">
     </form>
     <?php
         if(isset($_GET['error'])){
@@ -61,7 +66,7 @@
             header('Location: deleteUser.php');
         }
         else{
-            echo "<p>Veuillez cocher un ou plusieurs produit à supprimer</p>";
+            echo "<p style=text-align:center;>Veuillez cocher un ou plusieurs produit à supprimer</p>";
         }
     ?>
     </div>

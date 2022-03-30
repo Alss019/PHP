@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <title>Ajouter Utilisateur</title>
+    <title>Modifier Utilisateur</title>
 </head>
 <body>
 <header class="masthead">
@@ -53,12 +53,12 @@
 
     <div class="form-outline mb-4">
     <label class="form-label">Email</label>
-    <input type="text" class="form-control" name="mail_util"/>
+    <input type="email" class="form-control" name="mail_util"/>
     </div>
 
     <div class="form-outline mb-4">
     <label class="form-label">Mot de Passe</label>
-    <input type="text" class="form-control" name="mdp_util"/>
+    <input type="password" class="form-control" name="mdp_util"/>
     </div>
 
         <button type="submit" class="btn btn-primary btn-block" value="Modifier" >Modifier</button>
@@ -84,13 +84,13 @@ include 'Fonction.php';
               $prenom = $_POST['prenom_util'];
               $mail = $_POST['mail_util'];
               $mdp = $_POST['mdp_util'];
-
+              $mdpUtil = md5($_POST['mdp_util']);
               updateUtil($bdd, $nom, $prenom, $mail, $mdp, $value);
-              echo "<p>Votre profil a été modifier<p>";
+              echo '<br><div class="alert alert-success container" style="text-align:center;"> Votre profil a été modifier avec succès</div>';
           }
         
           else{
-              echo '<p style="text-align:center">Veuillez remplir les champs du  formulaire<p>';
+              echo '<br><div class="alert alert-warning container"> Tout les champs doivent être remplis </div>';
           }
         // }
         //   else{
