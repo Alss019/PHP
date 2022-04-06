@@ -28,6 +28,8 @@
       <h1>Liste des Utilisateurs</h1>
       <br>
         <form method="post" action="">
+        <span><a href="ctrl_delete_user.php" class="btn">❌</a></span>
+        <br>
             <ul class="list-group">
 </body>
 

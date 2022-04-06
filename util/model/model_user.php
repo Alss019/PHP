@@ -2,7 +2,7 @@
     function adduser($bdd,$nom,$prenom,$mail,$mdp){
 try {
     $req = $bdd->prepare('INSERT INTO utilisateur(nom_util,prenom_util,mail_util,mdp_util)
-    VALUES (:nom_util, :prenom_util, :mail_util, :mail_util)');
+    VALUES (:nom_util, :prenom_util, :mail_util, :mdp_util)');
     $req -> execute(array(
         'nom_util' => $nom,
         'prenom_util' => $prenom,
@@ -47,7 +47,7 @@ function updateUser($bdd,$nom,$prenom,$mail,$mdp,$value){
     }
 }
 
-function deleteProduit($bdd, $value){
+function deleteUser($bdd, $value){
     try{
         $req = $bdd->prepare('DELETE FROM utilisateur WHERE id_util = :id_util');
         $req->execute(array(
