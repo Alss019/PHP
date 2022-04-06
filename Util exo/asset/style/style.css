@@ -1,0 +1,14 @@
+.li_grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 5% 5%;
+    justify-content: center;
+    text-align: center;
+    height: 50px;
+    font-family: 'Courier New', Courier, monospace;
+}
+a{
+    text-decoration: none;
+}
+.container{
+    width: 75vw;
+}
